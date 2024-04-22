@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Membership</title>
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    font-family: roboto;
+  }
+  .one{
+    background-color: rgb(225, 68, 24);
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  .one p{
+    margin-top: 10px;
+    color: whitesmoke;
+    font-size: 6.5rem;
+  }
+  .slre{
+    display: flex;
+    border: 1px solid gray;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .slmet p{
+    margin-top: 40px;
+    font-size: 4rem;
+    margin-left: 10px;
+  }
+  .amountli{
+    border: 1px solid gray;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+  .amount input{
+    /*margin-left:50;*/
+    border: 1px solid gray;
+    padding: 10px;
+  }
+  .amountp{
+    height: 100px;
+    width: 50%;
+    border: 2px solid rgb(45, 9, 174);
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+  .amount{
+    display: flex;
+  }
+  .price{
+    display: flex;
+  }
+  .firp{
+    margin-left: 25px;
+    font-size: 2.5rem;
+  }
+  .secp{
+    margin-left: 30px;
+    margin-right: 15px;
+    margin-top: 11px;
+    color: rgb(225, 68, 24);
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  #in{
+    height: 100px;
+    width: 750px;
+    margin-bottom: 5px;
+    border: 3px solid rgb(45, 9, 174);
+    text-align: center;
+    border-radius: 5px;
+  }
+  hr{
+    size: 2px;
+    border: 1px solid green;
+    margin-bottom: 5px;
+  }
+  .pay{
+    background-color: red;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+  }
+  #tran{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 3rem;
+  }
+  #nagad{
+    width: 300px;
+    height: auto;
+  }
+  #re2{
+    height: 100px;
+    width: 650px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .list{
+    text-align: start;
+    margin-left: 60px;
+  }
+  li{
+    margin-bottom: 10px;
+    
+  }
+  #lasli{
+    padding-bottom: 20px;
+  }
+  .bt{
+    text-align: center;
+  }
+  #vy{
+    height: 100px;
+    width: 550px;
+    justify-content: center;
+    color: white;
+    background-color: rgb(225, 68, 24);
+    border-radius: 10px;
+    border: 1px solid palegreen;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    margin-top: 25px;
+  }
+  .amountp {
+    background-color: white; /* Set the initial background color */
+    transition: background-color 1s; /* Add a transition for the background-color property */
+  }
+  
+  .amountp:hover {
+    background-color: aqua; /* Change the background color when hovering */
+    animation: revertColor 0.5s ease 1 forwards; /* Apply an animation to revert the color after 1 second and keep it */
+    border: 4px solid green;
+    height: 98px;
+    width: 49%;
+  }
+  
+  @keyframes revertColor {
+    0% {
+      background-color: aqua; /* Start with the hover color */
+    }
+    100% {
+      background-color: white; /* End with the initial color */
+    }
+  }
+  input[type="radio"] {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border: 2px solid rgb(9, 241, 79);
+    color: green;
+  }
+  input::placeholder {
+    font-size: 2rem;
+    color: #999;
+  }
+  input{
+    font-size: 3rem;
+    border: 3px solid green;
+  }
+  /* Add some basic styling to the footer */
+  footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+  }
+  
+  .footer-content {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  .footer-info, .footer-social {
+      flex: 1;
+      padding: 0 20px;
+  }
+  
+  h4 {
+      font-size: 40px;
+      margin-bottom: 10px;
+  }
+  
+  p {
+      font-size: 30px;
+  }
+  
+  .social-icon {
+      display: block;
+      margin-top: 5px;
+      text-decoration: none;
+      color: #fff;
+    font-size: 30px;
+  }
+  
+  /* Style the bottom copyright text */
+  .footer-bottom {
+      text-align: center;
+      background-color: #222;
+      padding: 10px 0;
+    font-size: 2rem
+  }
+  
+  /* Adjust link styles for better visibility in Chrome */
+  a {
+      color: #fff;
+      text-decoration: none;
+  }
+  
+  a:hover {
+      text-decoration: underline;
+  }
+  .cng{
+    background-color: white;
+    color: black;
+  }
+  #dlogo{
+    width: 980px;
+    height: 450px;
+  }
+  #bkash{
+    width: 300px;
+    height: auto;
+  }
+  #method{
+    font-size: 3rem;
+  }
+  #n{
+    margin-bottom: 100px;
+  }
+  #b{
+    margin-bottom: 20px;
+    
+  }
+  .log2{
+    display: flex;
+  }
+  #continue{
+    height: 100px;
+    width: 550px;
+    justify-content: center;
+    color: white;
+    background-color: rgb(225, 68, 24);
+    border-radius: 10px;
+    border: 1px solid rgb(225, 68, 24);
+    margin-bottom: 150px;
+    font-size: 3rem;
+    margin-top: 25px;
+  }
+  .alt{
+    text-align: center;
+  }
+  }
+  #vy:hover{
+    height: 90px;
+    width: 540px;
+    border: 3px solid blue;
+  }
+  .tid{
+    text-align: center;
+    margin-top: 25px;
+  }
+  .tid p{
+    color: deeppink;
+    font-size: 3.2rem;
+    font-weight: bold;
+  }
+  .border{
+    border: 3px solid rgb(45, 9, 174);
+    margin-right: 20px;
+  }
+  .border:hover{
+    border: 3px solid rgb(11, 216, 38);
+  }
+  .logo2{
+    display: flex;
+    margin-bottom: 40px;
+  }
+  #glogo{
+    height: 200px;
+    width: auto;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+  }
+  .logo{
+    display: flex;
+  }
+  #logp{
+    margin-top: 80px;
+    font-size: 3rem;
+    font-weight: 800px;
+    margin-left: 5px;
+  }
+  #acb{
+    width: 100px;
+    margin-left: 400px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: 800px;
+  }
+  header{
+    width: 100%;
+    background-color: rgb(225, 68, 24);
+  }
+#topimg{
+  float: left;
+  height: 210px;
+  margin-left: 160px;
+}
+
+footer {
+    background: linear-gradient(135deg, purple, green);
+    padding: 20px;
+    color: white;
+    text-align: center;
+  margin-top: px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-info a i {
+    margin-right: 5px;
+}
+
+.contact-info a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.gmail-section {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.gmail-section i {
+    margin-right: 5px;
+}
+
+.opening-times {
+    margin-top: 10px;
+    font-size: 2.5rem;
+}
+
+.section-option {
+    margin-top: 10px;
+    font-size: 2.5rem;
+}
+
+.section-option a {
+    color: white;
+    text-decoration: none;
+}
+
+.section-option a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .item {
+            margin-bottom: 10px;
+          font-size: 3rem;
+        }
+        .total {
+            margin-top: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+          color: green;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 3rem;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button.remove {
+            background-color: red;
+        }
+  .alt {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8); /* optional: semi-transparent background */
+            padding: 0px;
+            border-radius: 50px;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+
+        .ntf {
+            /* Add any additional styling for the notification div */
+        }
+
+        /* Style for the OK button */
+        .ok-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            height: 100px;
+            width: 300px;
+            font-size: 3rem;
+        }
+  .alt p{
+    font-size: 3rem;
+    color: white;
+    padding: 25px;
+  }
+  .ntf{
+   height: 400px;
+   width: 900px;
+   background-color: black;
+   border-radius: 40px;
+   
+ }
+  #weeklyCount{
+    display: none;
+  }
+  #monthlyCount{
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <a href="https://garenabdtop.github.io/GarenaBD/"><img id="glogo"
+                src="https://banner2.cleanpng.com/20180327/uhw/kisspng-fifa-online-3-blackshot-garena-icon100-computer-i-steam-5aba1e32e3d3c6.7769673715221468669332.jpg"
+                alt="Gshop Logo"></a>
+        <p id="logp">Membership</p>
+      <img id="topimg" src="https://staticg.sportskeeda.com/editor/2022/07/6dbea-16571712698499-1920.jpg" alt="mainlogo">
+    </div>
+    <hr color="black">
+</header>
+    <div class="slre">
+        <div class="one">
+          <p>1</p>
+        </div>
+        <div class="slmet">
+          <p>Add To Cart</p>
+        </div>
+      </div>
+    <div class="amountli">
+      <div class="amount">
+        <div class="container">
+        <div class="item">
+            <span>Weekly - BDT 132</span> <br>
+            <span id="weeklyCountDisplay">0 selected</span>
+            <button onclick="addToCart(132, 'weekly')">Add</button>
+            <span id="weeklyCount">0</span>
+            <button class="remove" onclick="removeFromCart('weekly')">Remove</button>
+        </div>
+          <br><br><br><br><br><br><br><br>
+        <div class="item">
+            <span>Monthly - BDT 670</span> <br>
+            <span id="monthlyCountDisplay">0 selected</span>
+            <button onclick="addToCart(670, 'monthly')">Add</button>
+            <span id="monthlyCount">0</span>
+            <button class="remove" onclick="removeFromCart('monthly')">Remove</button>
+        </div>
+          <br><br><br><br><br><br><br><br>
+        <div class="total">
+            <span id="selectedItems">0 items</span><br>
+            Total Price: <span id="totalPrice">0</span> BDT
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="cng">
+      <div class="slre">
+        <div class="one">
+          <p>2</p>
+        </div>
+        <div class="slmet">
+          <p>Account Info</p>
+          <hr>
+          <input id='in' type="number" placeholder="Player ID (UID)"required>
+        </div>
+      </div>
+      <div class="tracod">
+        <div class="slre">
+        <div class="one">
+          <p>3</p>
+        </div>
+        <div class="slmet">
+          <p>Instant Payment</p><br>
+          <div class="logo2">
+            <div class="border"><label><input type="radio" name="payment" id="b" value="bk"><img id="bkash" src="https://www.logo.wine/a/logo/BKash/BKash-bKash-Logo.wine.svg" alt="bKash Logo" width="300px" height="auto">
+            </label></div>
+            <div class="border"><label><input type="radio" name="payment" id="n" value="ng"><img id="nagad" src="https://www.himublog.com/wp-content/uploads/2021/06/nagad.jpg" alt="Nagad Image" class="large-image">
+            </label></div>
+          </div>
+        </div>
+      </div>
+        <div class="alt">
+          <div class="ntf">
+            <p>Alert: <br><br>Please fill all options</p>
+            <button class="ok-button" onclick="closeNotification()">OK</button>
+        </div>
+        </div>
+          <div class="bt">
+            <button id="continue">NEXT</button>
+          </div>
+        <footer>
+    <div class="contact-info">
+        <a href="https://wa.me/+8801891707400" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+          <p>WhatsApp</p>
+        </a>
+        <div class="gmail-section">
+            <i class="far fa-envelope"></i>
+        </div>
+    </div>
+    <div class="opening-times">
+        Opening Times: 24/7
+    </div>
+    <div class="section-option">
+        <a>garenabdtopup99@gmail.com</a>
+    </div>
+    <div class="copyright">
+        &copy; 2024 GARENA BD TOPUP. All rights reserved.
+    </div>
+</footer>
+          <script>
+    let totalPrice = 0;
+    let totalItems = 0;
+    let weeklyCount = 0;
+    let monthlyCount = 0;
+
+    function addToCart(price, itemId) {
+        if ((itemId === 'weekly' && weeklyCount < 5) || (itemId === 'monthly' && monthlyCount < 5)) {
+            if (itemId === 'weekly') {
+                weeklyCount++;
+                totalItems++;
+                totalPrice += price;
+                updateCount('weekly');
+            } else if (itemId === 'monthly') {
+                monthlyCount++;
+                totalItems++;
+                totalPrice += price;
+                updateCount('monthly');
+            }
+            updateTotal();
+        } else {
+            alert("You can only select up to 5 items for each.");
+        }
+    }
+
+    function removeFromCart(itemId) {
+        if (itemId === 'weekly' && weeklyCount > 0) {
+            weeklyCount--;
+            totalItems--;
+            totalPrice -= 132;
+            updateCount('weekly');
+        } else if (itemId === 'monthly' && monthlyCount > 0) {
+            monthlyCount--;
+            totalItems--;
+            totalPrice -= 670;
+            updateCount('monthly');
+        }
+        updateTotal();
+    }
+
+    function updateCount(itemId) {
+        if (itemId === 'weekly') {
+            document.getElementById('weeklyCount').innerText = weeklyCount;
+            document.getElementById('weeklyCountDisplay').innerText = weeklyCount + " selected";
+        } else if (itemId === 'monthly') {
+            document.getElementById('monthlyCount').innerText = monthlyCount;
+            document.getElementById('monthlyCountDisplay').innerText = monthlyCount + " selected";
+        }
+        updateSelectedItems();
+    }
+
+    function updateSelectedItems() {
+        let selected = '';
+        if (weeklyCount > 0) {
+            selected += weeklyCount + " Weekly";
+        }
+        if (monthlyCount > 0) {
+            if (selected !== '') {
+                selected += " + ";
+            }
+            selected += monthlyCount + " Monthly";
+        }
+        document.getElementById('selectedItems').innerText = selected + " selected";
+    }
+
+    function updateTotal() {
+        document.getElementById('totalPrice').innerText = totalPrice;
+    }
+
+    document.getElementById('continue').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        // Reset validation messages
+        document.querySelectorAll('.validation-msg').forEach(function(element) {
+            element.style.display = 'none';
+        });
+
+        // Check if at least one item is selected
+        if (totalItems === 0) {
+            document.getElementById('itemsValidation').style.display = 'block';
+            return;
+        }
+
+        // Check if the player ID (UID) is filled
+        var playerIdInput = document.getElementById('in');
+        if (playerIdInput.value.trim() === '') {
+            document.getElementById('uidValidation').style.display = 'block';
+            return;
+        }
+
+        // Check if a payment method is selected
+        var paymentInputs = document.querySelectorAll('input[name="payment"]');
+        var paymentSelected = false;
+        for (var i = 0; i < paymentInputs.length; i++) {
+            if (paymentInputs[i].checked) {
+                paymentSelected = true;
+                break;
+            }
+        }
+
+        // Display validation message if no payment option is selected
+        if (!paymentSelected) {
+            document.getElementById('paymentValidation').style.display = 'block';
+            return; // Added return statement to prevent further execution
+        }
+
+        // Proceed to the next step if all conditions are met
+        var selectedPaymentValue = document.querySelector('input[name="payment"]:checked').value;
+        if (selectedPaymentValue === 'bk') {
+            window.open('Bkash-pay.html', '_blank');
+        } else if (selectedPaymentValue === 'ng') {
+            window.open('Nagad-pay.html', '_blank');
+        } else {
+            alert('Invalid payment selection');
+        }
+    });
+
+    // Show the 'alt' div when the 'Next' button is clicked and conditions are not met
+    document.getElementById('continue').addEventListener('click', function(event) {
+        var playerIdInput = document.getElementById('in');
+        var paymentInputs = document.querySelectorAll('input[name="payment"]');
+        if (totalItems === 0 || playerIdInput.value.trim() === '' || !paymentInputs) {
+            document.querySelector('.alt').style.display = 'block';
+        }
+    });
+
+    // Close the 'alt' div when the OK button is clicked
+    document.getElementById('okButton').addEventListener('click', function() {
+        document.querySelector('.alt').style.display = 'none';
+    });
+        function closeNotification() {
+      // Hide the notification by setting its display property to none
+      document.querySelector('.alt').style.display = 'none';
+  }
+</script>
+</body>
+</html>

