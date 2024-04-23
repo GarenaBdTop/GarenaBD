@@ -507,17 +507,17 @@ body {
       <div class="amount">
         <div class="container">
         <div class="item">
-            <span>Weekly - BDT 132</span> <br>
+            <span>Weekly - BDT 135</span> <br>
             <span id="weeklyCountDisplay">0 selected</span>
-            <button onclick="addToCart(132, 'weekly')">Add</button>
+            <button onclick="addToCart(135, 'weekly')">Add</button>
             <span id="weeklyCount">0</span>
             <button class="remove" onclick="removeFromCart('weekly')">Remove</button>
         </div>
           <br><br><br><br><br><br><br><br>
         <div class="item">
-            <span>Monthly - BDT 670</span> <br>
+            <span>Monthly - BDT 675</span> <br>
             <span id="monthlyCountDisplay">0 selected</span>
-            <button onclick="addToCart(670, 'monthly')">Add</button>
+            <button onclick="addToCart(675, 'monthly')">Add</button>
             <span id="monthlyCount">0</span>
             <button class="remove" onclick="removeFromCart('monthly')">Remove</button>
         </div>
@@ -613,12 +613,12 @@ body {
         if (itemId === 'weekly' && weeklyCount > 0) {
             weeklyCount--;
             totalItems--;
-            totalPrice -= 132;
+            totalPrice -= 135;
             updateCount('weekly');
         } else if (itemId === 'monthly' && monthlyCount > 0) {
             monthlyCount--;
             totalItems--;
-            totalPrice -= 670;
+            totalPrice -= 675;
             updateCount('monthly');
         }
         updateTotal();
