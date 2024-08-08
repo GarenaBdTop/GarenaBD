@@ -47,7 +47,7 @@
     justify-content: center;
   }
   .amount input{
-    /*margin-left:50;*/
+    /margin-left:50;/
     border: 1px solid gray;
     padding: 10px;
   }
@@ -179,6 +179,9 @@
   input{
     font-size: 3rem;
     border: 3px solid green;
+    height: 100px;
+    border-radius: 30px;
+    text-align: center;
   }
   /* Add some basic styling to the footer */
   footer {
@@ -382,13 +385,46 @@
         <div class="amountp"><input type="radio" name="amount" id="amount4" value="Option 4"> <label for="amount4"><div class="price"><p class="firp">5X<br>Lite</p>
           <p class="secp">৳175</p></div>
         </label></div>
+        <br>
+    <br>
+    <br>
+    <br>
+        <br>
+    <br>
+    <br>
+    <br>
+        <br>
+    <br>
+    <br>
+    <br>
+        <br>
+    <br>
+    <br>
+    <br>
+        <br>
+    <br>
+    <br>
+    <br>
     </div>
     </div>
+  <div class="cng">
+      <div class="slre">
+        <div class="one">
+          <p>2</p>
+        </div>
+        <div class="slmet">
+          <p>Player ID</p>
+          <hr>
+          <br>
+          <input id="acnid" type="text" placeholder="UID">
+        </div>
+      </div>
+  
     <div class="cng">
       <div class="tracod">
         <div class="slre">
         <div class="one">
-          <p>2</p>
+          <p>3</p>
         </div>
         <div class="slmet">
           <p>Instant Payment</p><br>
@@ -431,54 +467,58 @@
     </div>
 </footer>
       <script>
-      // Function to close the notification
-function closeNotification() {
-  document.querySelector('.alt').style.display = 'none';
-}
+  document.getElementById('continue').addEventListener('click', function(event) {
+      event.preventDefault();
 
-document.getElementById('continue').addEventListener('click', function(event) {
-    event.preventDefault();
-
-    // Hide the 'alt' div initially
-    document.querySelector('.alt').style.display = 'none';
-
-    // Check if any amount option is selected in the 'amount' section
-    var amountInputs = document.querySelectorAll('input[name="amount"]');
-    var amountSelected = false;
-    for (var i = 0; i < amountInputs.length; i++) {
-      if (amountInputs[i].checked) {
-        amountSelected = true;
-        break;
+      // Check if an amount option is selected in the 'amount' section
+      var amountInputs = document.querySelectorAll('input[name="amount"]');
+      var amountSelected = false;
+      for (var i = 0; i < amountInputs.length; i++) {
+          if (amountInputs[i].checked) {
+              amountSelected = true;
+              break;
+          }
       }
-    }
 
-    // Check if any payment method is selected in the 'logo2' section
-    var paymentInputs = document.querySelectorAll('input[name="payment"]');
-    var paymentSelected = false;
-    var selectedPaymentValue = null;
-    for (var i = 0; i < paymentInputs.length; i++) {
-      if (paymentInputs[i].checked) {
-        paymentSelected = true;
-        selectedPaymentValue = paymentInputs[i].value;
-        break;
+      // Check if a payment method is selected in the 'logo2' section
+      var paymentInputs = document.querySelectorAll('input[name="payment"]');
+      var paymentSelected = false;
+      for (var i = 0; i < paymentInputs.length; i++) {
+          if (paymentInputs[i].checked) {
+              paymentSelected = true;
+              break;
+          }
       }
-    }
 
-    // Check if all conditions are met
-    if (!amountSelected || !paymentSelected) {
-      // Display the 'alt' div if any condition is not met
-      document.querySelector('.alt').style.display = 'block';
-    } else {
+      // Check if the player ID input field is filled
+      var playerIdInput = document.getElementById('acnid');
+
+      if (!amountSelected || !paymentSelected || playerIdInput.value.trim() === '') {
+          document.querySelector('.alt').style.display = 'block';
+          return;
+      }
+
       // Proceed to the next step if all conditions are met
-      if (selectedPaymentValue === 'bk') {
-        window.open('Bkash-pay.html', '_blank');
-      } else if (selectedPaymentValue === 'ng') {
-        window.open('Nagad-pay.html', '_blank');
-      } else {
-        alert('Invalid payment selection');
+      var selectedPaymentValue = null;
+      for (var i = 0; i < paymentInputs.length; i++) {
+          if (paymentInputs[i].checked) {
+              selectedPaymentValue = paymentInputs[i].value;
+              break;
+          }
       }
-    }
-});
-      </script>
+      if (selectedPaymentValue === 'bk') {
+          window.open('Bkash-pay.html', '_blank');
+      } else if (selectedPaymentValue === 'ng') {
+          window.open('Nagad-pay.html', '_blank');
+      } else {
+          alert('Invalid payment selection');
+      }
+  });
+
+  function closeNotification() {
+      // Hide the notification by setting its display property to none
+      document.querySelector('.alt').style.display = 'none';
+  }
+</script>
 </body>
 </html>
